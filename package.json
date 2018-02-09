@@ -9,7 +9,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "./node_modules/.bin/webpack --colors --progress",
     "watch": "npm build -- --watch",
-    "server": "./node_modules/.bin/webpack-dev-server --content-base src/ --hot --inline"
+    "server": "./node_modules/.bin/webpack-dev-server --content-base src/ --hot --inline",
+    "start": "./node_modules/.bin/webpack-dev-server"
   },
   "repository": {
     "type": "git",

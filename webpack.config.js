@@ -54,7 +54,10 @@ module.exports = {
       'process.env': { NODE_ENV: JSON.stringify(nodeENV) }
     }),
     new HtmlWebpackPlugin({
-      template: path.resolve(__dirname, './src/index.html')
+      template: path.resolve(__dirname, './src/index.html'),
+      path: path.join(__dirname, '/dist'),
+      file: 'index.html',
+      inject: 'body'
     })
   ]
 }
