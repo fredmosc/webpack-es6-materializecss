@@ -1,5 +1,5 @@
 {
-  "name": "test-webpack2",
+  "name": "webpack2-materialize",
   "version": "1.0.0",
   "description": "",
   "main": "src/index.js",
@@ -11,8 +11,12 @@
     "watch": "npm build -- --watch",
     "server": "./node_modules/.bin/webpack-dev-server --content-base src/ --hot --inline"
   },
-  "author": "",
-  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:fredmosc/webpack-es6-materializecss.git"
+  },
+  "author": "Frederick Moschkowich (fredmosc)",
+  "license": "MIT",
   "devDependencies": {
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.2",
