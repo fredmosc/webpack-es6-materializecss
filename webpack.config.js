@@ -1,19 +1,18 @@
 const path = require('path')
 
-const webpack = require('webpack')
-
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+
+const webpack = require('webpack')
 
 const nodeENV = process.env.NODE_ENV || 'production'
 
 module.exports = {
-  context: path.join(__dirname, '/src'),
   entry: {
-    app: './index.js'
+    app: './src/index.js'
   },
   output: {
     path: path.join(__dirname, '/dist'),
-    filename: '[name].bundle.js',
+    filename: 'bundle.js',
     publicPath: '/assets'
   },
   module: {
@@ -45,6 +44,11 @@ module.exports = {
     contentBase: path.join(__dirname, '/src')
   },
   plugins: [
+    new HtmlWebpackPlugin({
+      template: path.join(__dirname, '/src/index.html'),
+      filename: 'index.html',
+      inject: 'body'
+    }),
     new webpack.optimize.UglifyJsPlugin({
       compress: { warnings: false },
       output: { comments: false },
@@ -52,12 +56,6 @@ module.exports = {
     }),
     new webpack.DefinePlugin({
       'process.env': { NODE_ENV: JSON.stringify(nodeENV) }
-    }),
-    new HtmlWebpackPlugin({
-      template: path.resolve(__dirname, './src/index.html'),
-      path: path.join(__dirname, '/dist'),
-      file: 'index.html',
-      inject: 'body'
     })
   ]
 }
