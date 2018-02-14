@@ -5,6 +5,6 @@ A simple boilerplate using [Webpack 2](https://webpack.js.org/) and [Materialize
 Just clone and run:
 
     npm install
-    npm run server
+    npm run start
 
 Enjoy :)
