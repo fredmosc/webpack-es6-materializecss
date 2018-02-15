@@ -12,8 +12,7 @@ module.exports = {
   },
   output: {
     path: path.join(__dirname, '/dist'),
-    filename: 'bundle.js',
-    publicPath: '/assets'
+    filename: 'bundle.js'
   },
   module: {
     rules: [
@@ -37,6 +36,10 @@ module.exports = {
       {
         test: /\.(sass|scss|css)$/,
         use: ['style-loader', 'css-loader', 'sass-loader']
+      },
+      {
+        test: /\.(jpe?g|gif|png|svg|woff|ttf|wav|mp3)$/,
+        loader: 'file-loader'
       }
     ]
   },
